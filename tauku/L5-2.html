@@ -18,11 +18,12 @@
     <meta name="author" content="詹宗龍（臺中明道中學）">
 <meta name="copyright" content="© 2026 詹宗龍（臺中明道中學）。保留一切權利。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>咱來鬥句 - 台語語詞重組</title>
+    <title>第5課 (2)情批</title>
+<link rel="icon" id="md-icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23FFD400%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2250%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23111111%22%20font-family%3D%22Microsoft%20JhengHei%2CPingFang%20TC%2CNoto%20Sans%20TC%2Csans-serif%22%3E%E8%82%B2%3C/text%3E%3C/svg%3E">
     
     <link href="https://tauhu.tw/tauhu-oo.css" rel="stylesheet">
     
-    <style>
+    <style>/*md-dvh*/
         /* --- 動態背景動畫定義 --- */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -43,7 +44,7 @@
             color: #333;
             display: flex;
             justify-content: center;
-            min-height: 100vh; 
+            min-height: 100vh;min-height:100dvh; 
         }
 
         #app {
@@ -144,7 +145,7 @@
             .game-area {
                 aspect-ratio: auto;
                 max-height: none;
-                height: calc(100vh - 260px);  /* 預留給標題、警語與下方按鈕列 */
+                height: calc(100vh - 260px);height:calc(100dvh - 260px);  /* 預留給標題、警語與下方按鈕列 */
                 margin-top: 0;
             }
 
@@ -282,7 +283,7 @@
             flex-direction: column;
             width: 100%;
             aspect-ratio: 16 / 5; 
-            max-height: calc(100vh - 200px); 
+            max-height: calc(100vh - 200px);max-height:calc(100dvh - 200px); 
             border: none;
             border-radius: 20px 20px 0 0; /* 柔和導角 */
             box-shadow: 0 10px 25px rgba(100, 100, 255, 0.15);
@@ -635,6 +636,84 @@
         }
 
     </style>
+<style id="md-bigchip">/*md-dvh*/
+/* 投影用滿版大字（2026-11-15 老師要求）：拿掉左右留白、遊戲區填滿螢幕高度、選項與題號放大；手機版另有調整 — © 2026 詹宗龍 */
+@media (min-width: 601px) {
+  #app { max-width: none; padding: 0 1.5vw; }
+  #game-page:not(.hidden) {
+    display: flex; flex-direction: column;
+    height: calc(100vh - 22px);height:calc(100dvh - 22px); height: calc(100dvh - 22px);   /* 底部留給右下角出版社標示 */
+    margin-top: 0; transform: none; box-sizing: border-box; padding-top: 6px;
+  }
+  #game-page header { flex: none; }
+  #game-page header h1 { margin-top: 2px; margin-bottom: 0; }
+  #game-page .warning-msg { width: 100%; box-sizing: border-box; flex: none; }
+  #game-page .game-area { flex: 1 1 auto; min-height: 260px; aspect-ratio: auto; max-height: none; }
+  #game-page .control-panel { max-width: none; flex: none; }
+  .result-area { flex: 1.6; }
+  .options-area { flex: 4; padding: 1vh 1vw;padding:1dvh 1vw; }
+  #answer-info { flex: none; }   /* 公布答案後的解說區依內容高度，不擠掉選項 */
+  #chosen-words, #word-options { width: 99%; }
+  #word-options { gap: 2vh 1.6vw;gap:2dvh 1.6vw; }
+  .word-option, .chosen-word {
+    padding: 0.6vh 1.6vw 1vh;padding:0.6dvh 1.6vw 1dvh;
+    border-radius: 999px;
+    line-height: 1.1;
+    border-width: 3px;
+  }
+  .word-option { font-size: clamp(1.6em, min(3.4vw, 6.4vh), 4em);font-size:clamp(1.6em, min(3.4vw, 6.4dvh), 4em); }
+  .chosen-word { font-size: clamp(1.3em, min(2.6vw, 4.6vh), 3em);font-size:clamp(1.3em, min(2.6vw, 4.6dvh), 3em); margin: 3px; }
+  .option-number { font-size: 0.6em; font-weight: 900; opacity: 1; margin-bottom: 0; }
+}
+@media (max-width: 600px) {
+  .option-number { font-size: 0.95em; font-weight: 900; opacity: 1; }
+  .warning-msg { width: 100%; box-sizing: border-box; }   /* 原本略寬，手機會出現水平捲軸 */
+}
+/* 入口頁（選單）：滿版、整頁剛好一屏不溢出，字與按鈕隨螢幕縮放（各尺寸通用） */
+#menu-page:not(.hidden) {
+  display: flex; flex-direction: column;
+  height: calc(100vh - 22px);height:calc(100dvh - 22px); height: calc(100dvh - 22px);
+  margin-top: 0; transform: none; box-sizing: border-box; padding-top: 1vh;padding-top:1dvh;
+}
+#menu-page h1 { flex: none; margin: 0.5vh 0 0;margin:0.5dvh 0 0; font-size: clamp(1.6em, min(5vw, 7vh), 3.2em);font-size:clamp(1.6em, min(5vw, 7dvh), 3.2em); }
+#menu-page h2 { flex: none; margin: 0; font-size: clamp(1.1em, min(3vw, 4.4vh), 2em);font-size:clamp(1.1em, min(3vw, 4.4dvh), 2em); }
+#menu-page .menu-container {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto;
+  max-width: none; width: 100%; box-sizing: border-box;
+  margin: 1.5vh 0 0;margin:1.5dvh 0 0; padding: clamp(10px, 2.5vh, 32px) clamp(12px, 3vw, 48px);padding:clamp(10px, 2.5dvh, 32px) clamp(12px, 3vw, 48px);
+  display: flex; flex-direction: column; justify-content: space-evenly;
+}
+#menu-page .menu-container h3 { margin: 0.3em 0; font-size: clamp(1.1em, min(2.4vw, 4vh), 2em);font-size:clamp(1.1em, min(2.4vw, 4dvh), 2em); }
+#menu-page .button-group { gap: clamp(8px, 1.5vw, 24px); margin-bottom: 1vh;margin-bottom:1dvh; }
+#menu-page .menu-container button { font-size: clamp(1em, min(2.4vw, 4vh), 2em);font-size:clamp(1em, min(2.4vw, 4dvh), 2em); padding: 0.45em 1em; border-radius: 14px; }
+#menu-page #start-game { font-size: clamp(1.1em, min(2.6vw, 4.4vh), 2.2em);font-size:clamp(1.1em, min(2.6vw, 4.4dvh), 2.2em); margin-top: 1vh;margin-top:1dvh; padding: 0.5em; }
+</style>
+<style id="md-fit">/*md-dvh*/
+/* 響應式修正（各種螢幕不溢出可顯示範圍；矮螢幕時字級隨高度縮放）— © 2026 詹宗龍 */
+@media (min-width: 601px) and (max-height: 640px){
+ html body #game-page:not(.hidden){padding-top:2px}
+ html body #game-page header h1{font-size:clamp(16px,6vh,1.6em);font-size:clamp(16px,6dvh,1.6em);margin:0}
+ html body #game-page header h2{font-size:clamp(12px,4vh,1.1em);font-size:clamp(12px,4dvh,1.1em);margin:0}
+ html body #game-page header > div{margin-bottom:0.4vh !important;margin-bottom:0.4dvh !important;font-size:clamp(11px,3.2vh,1em);font-size:clamp(11px,3.2dvh,1em)}
+ html body #header-back-btn{top:2px;padding:0.6vh 1.2vw;padding:0.6dvh 1.2vw;font-size:clamp(11px,3.2vh,0.9em);font-size:clamp(11px,3.2dvh,0.9em)}
+ html body #game-page .warning-msg{font-size:clamp(10px,3vh,1em);font-size:clamp(10px,3dvh,1em);padding:0.4vh 1vw;padding:0.4dvh 1vw;margin:0.3vh auto 0.6vh;margin:0.3dvh auto 0.6dvh}
+ html body #feedback-message{height:auto;margin:0}
+ html body #game-page .game-area{min-height:0}
+ html body #game-page .control-panel{padding:0.8vh 1vw;padding:0.8dvh 1vw}
+ html body #game-page .control-panel button{padding:0.8vh 2vw;padding:0.8dvh 2vw;font-size:clamp(11px,3.6vh,1em);font-size:clamp(11px,3.6dvh,1em)}
+ html body .word-option{font-size:clamp(1em,min(3.4vw,6.4vh),4em);font-size:clamp(1em,min(3.4vw,6.4dvh),4em)}
+ html body .chosen-word{font-size:clamp(0.9em,min(2.6vw,4.6vh),3em);font-size:clamp(0.9em,min(2.6vw,4.6dvh),3em)}
+}
+@media (max-height: 640px){
+ html body #menu-page h1{font-size:clamp(16px,6vh,2.4em);font-size:clamp(16px,6dvh,2.4em)}
+ html body #menu-page h2{font-size:clamp(12px,4vh,1.6em);font-size:clamp(12px,4dvh,1.6em)}
+ html body #menu-page .menu-container{margin-top:0.8vh;margin-top:0.8dvh;padding:1.2vh 3vw;padding:1.2dvh 3vw}
+ html body #menu-page .menu-container h3{font-size:clamp(12px,3.6vh,1.6em);font-size:clamp(12px,3.6dvh,1.6em);margin:0.2em 0}
+ html body #menu-page .button-group{margin-bottom:0.4vh;margin-bottom:0.4dvh}
+ html body #menu-page .menu-container button{font-size:clamp(12px,3.8vh,1.6em);font-size:clamp(12px,3.8dvh,1.6em);padding:0.35em 0.9em}
+ html body #menu-page #start-game{font-size:clamp(13px,4vh,1.8em);font-size:clamp(13px,4dvh,1.8em);padding:0.35em;margin-top:0.6vh;margin-top:0.6dvh}
+}
+</style>
 </head>
 <body>
     <div id="app">
@@ -657,6 +736,7 @@
                         <button data-count="9">9 個</button>
                         <button data-count="11">11 個</button>
                         <button data-count="13">13 個</button>
+                        <button data-count="0" id="md-all-btn" title="題庫全部題目，亂數出題">全部</button>
                     </div>
                 </section>
                 <button id="start-game" disabled>開始遊戲</button>
@@ -1094,5 +1174,82 @@
         });
     </script>
 <div class="credit-src" style="position:fixed;right:4px;bottom:2px;z-index:2147483647;max-width:calc(100% - 8px);pointer-events:none;font:11px/1.4 sans-serif;color:#333;background:rgba(255,255,255,.72);padding:1px 6px;border-radius:4px;text-align:right;">育達文化事業股份有限公司授權使用｜© 2026 詹宗龍</div>
+<!-- md-fs：浮動全螢幕切換鈕 © 2026 詹宗龍（臺中市明道中學） -->
+<style id="md-fs-css">
+#md-fs-btn{position:fixed;right:4px;top:4px;left:auto;bottom:auto;z-index:2147483646;width:40px;height:40px;padding:0;margin:0;border:2px solid #FFD400;border-radius:50%;background:rgba(17,17,17,.8);color:#FFD400;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.55;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:opacity .15s;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+#md-fs-btn[hidden]{display:none}
+#md-fs-btn:hover,#md-fs-btn:focus-visible,#md-fs-btn.drag{opacity:1;outline:none}
+#md-fs-btn.drag{cursor:grabbing}
+#md-fs-btn svg{width:22px;height:22px;display:block;pointer-events:none}
+#md-fs-btn .md-fs-exit{display:none}
+#md-fs-btn.on .md-fs-enter{display:none}
+#md-fs-btn.on .md-fs-exit{display:block}
+@media print{#md-fs-btn{display:none}}
+</style>
+<button type="button" id="md-fs-btn" title="全螢幕（可拖曳移位）" aria-label="全螢幕" hidden>
+<svg class="md-fs-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+<svg class="md-fs-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+</button>
+<script id="md-fs-js">
+(function(){
+ var b=document.getElementById('md-fs-btn'),d=document,e=d.documentElement,K='md-fs-pos';
+ var req=e.requestFullscreen||e.webkitRequestFullscreen||e.msRequestFullscreen;
+ var ok=d.fullscreenEnabled||d.webkitFullscreenEnabled||d.msFullscreenEnabled;
+ if(!b||!req||ok===false){return;}
+ b.hidden=false;
+ function cur(){return d.fullscreenElement||d.webkitFullscreenElement||d.msFullscreenElement;}
+ function sync(){var on=!!cur();b.classList.toggle('on',on);var t=on?'取消全螢幕':'全螢幕';b.title=t+'（可拖曳移位）';b.setAttribute('aria-label',t);}
+ function toggle(){
+  if(cur()){(d.exitFullscreen||d.webkitExitFullscreen||d.msExitFullscreen).call(d);}
+  else{var p=req.call(e);if(p&&p.catch){p.catch(function(){});}}
+ }
+ var pos=null;
+ function place(){
+  if(!pos)return;
+  var w=b.offsetWidth||40,h=b.offsetHeight||40;
+  var x=Math.max(0,Math.min(innerWidth-w,pos.x*innerWidth)),y=Math.max(0,Math.min(innerHeight-h,pos.y*innerHeight));
+  b.style.left=x+'px';b.style.top=y+'px';b.style.right='auto';b.style.bottom='auto';
+ }
+ try{var s=JSON.parse(localStorage.getItem(K)||'null');if(s&&isFinite(s.x)&&isFinite(s.y))pos=s;}catch(_){}
+ place();addEventListener('resize',place);
+ var st=null,moved=false;
+ b.addEventListener('pointerdown',function(ev){if(ev.button>0)return;var r=b.getBoundingClientRect();st={x:ev.clientX,y:ev.clientY,ox:ev.clientX-r.left,oy:ev.clientY-r.top};moved=false;try{b.setPointerCapture(ev.pointerId);}catch(_){}});
+ b.addEventListener('pointermove',function(ev){
+  if(!st)return;
+  if(!moved&&Math.abs(ev.clientX-st.x)+Math.abs(ev.clientY-st.y)<8)return;
+  moved=true;b.classList.add('drag');
+  pos={x:(ev.clientX-st.ox)/innerWidth,y:(ev.clientY-st.oy)/innerHeight};place();
+ });
+ function end(){if(!st)return;st=null;b.classList.remove('drag');if(moved){try{localStorage.setItem(K,JSON.stringify(pos));}catch(_){}}}
+ b.addEventListener('pointerup',end);b.addEventListener('pointercancel',end);
+ b.addEventListener('click',function(ev){
+  ev.preventDefault();ev.stopPropagation();
+  if(moved){moved=false;return;}
+  toggle();b.blur();
+ });
+ d.addEventListener('fullscreenchange',sync);d.addEventListener('webkitfullscreenchange',sync);
+ sync();
+})();
+</script>
+<!-- /md-fs -->
+<!-- md-all：入口頁「全部」題數鈕，題庫全部亂數出題（© 2026 詹宗龍） -->
+<script id="md-all-js">(function(){var b=document.getElementById('md-all-btn');try{b.dataset.count=String(FULL_GAME_DATA.length);}catch(_){b.hidden=true;}})();</script>
+<!-- /md-all -->
+<!-- md-menufull：入口頁橫放滿版、物件隨螢幕放大（© 2026 詹宗龍） -->
+<style id="md-menufull">/*md-dvh*/
+@media (orientation: landscape){
+ html body #menu-page .menu-container h3{font-size:clamp(14px,min(2.4vw,4.6vh),44px)}
+ html body #menu-page .menu-container .button-group{flex-wrap:nowrap;gap:1.4vw}
+ html body #menu-page .menu-container .button-group button{flex:1 1 0;min-width:0;white-space:nowrap;padding:2.2vh 0.6vw;font-size:clamp(13px,min(2.6vw,5.4vh),52px)}
+}
+/* 直放：加了「全部」後數量鈕變 3 列、窄手機溢出 → 方式 2 欄、數量 3 欄格狀 */
+@media (orientation: portrait){
+ html body #menu-page .menu-container .button-group{display:grid;gap:1.4vh 2.4vw;margin-bottom:0.6vh}
+ html body #menu-page #mode-selection{grid-template-columns:repeat(2,1fr)}
+ html body #menu-page #count-selection{grid-template-columns:repeat(3,1fr)}
+ html body #menu-page .menu-container .button-group button{min-width:0;margin:0;white-space:nowrap;padding:1.3vh 1vw;font-size:clamp(13px,min(5vw,3vh),32px)}
+}
+</style>
+<!-- /md-menufull -->
 </body>
 </html>

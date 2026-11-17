@@ -72,27 +72,24 @@
             margin: 0;
             font-size: 2.2em;
             font-weight: 800;
-            line-height: 1;
-        }
-
-        .header p.author {
-            margin: 0;
-            font-size: 1.1em;
-            color: #FFFFFF;
-            line-height: 1;
+            line-height: 1.2;
+            text-align: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 25px;
             line-height: 1;
         }
 
         .card {
+            flex: 0 1 340px;
+            box-sizing: border-box;
             background-color: var(--card-bg);
             border-radius: 8px;
             padding: 25px;
@@ -191,7 +188,9 @@
             }
             .container {
                 padding: 0 16px;
-                grid-template-columns: 1fr;
+            }
+            .card {
+                flex-basis: 100%;
             }
         }
     </style>
@@ -202,7 +201,6 @@
         <div class="title-row">
             <div class="logo"><img src="img/yuda-logo.png" alt="育達文化"></div>
             <h1>臺灣台語 育達版高中全1冊教案</h1>
-            <p class="author">教案作者：臺中明道中學 詹宗龍</p>
         </div>
     </header>
 
@@ -221,6 +219,21 @@
                 <li><a href="pen/YUDA-B1L6.html" target="_blank">第6課 化妝品</a></li>
                 <li><a href="pen/YUDA-B1L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="pen/YUDA-B1L8.html" target="_blank">第8課 翕相師傅</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>形音義</h2>
+            <span class="pinyin">hîng-im-gī</span>
+            <ul class="links-list">
+                <li><a href="hingim/L1.html" target="_blank">第1課 美食外送</a></li>
+                <li><a href="hingim/L2.html" target="_blank">第2課 茂林的Rukai族佮烏秫米祭</a></li>
+                <li><a href="hingim/L3.html" target="_blank">第3課 山裡的英雄</a></li>
+                <li><a href="hingim/L4.html" target="_blank">第4課 馬偕之路</a></li>
+                <li><a href="hingim/L5.html" target="_blank">第5課 無字的情批＋情批</a></li>
+                <li><a href="hingim/L6.html" target="_blank">第6課 化妝品</a></li>
+                <li><a href="hingim/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
+                <li><a href="hingim/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
         </div>
 

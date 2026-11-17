@@ -18,11 +18,12 @@
   <meta name="author" content="詹宗龍（臺中明道中學）">
 <meta name="copyright" content="© 2026 詹宗龍（臺中明道中學）。保留一切權利。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>台語聽音選語詞遊戲</title>
+  <title>第2課 茂林的Rukai族</title>
+<link rel="icon" id="md-icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23FFD400%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2250%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23111111%22%20font-family%3D%22Microsoft%20JhengHei%2CPingFang%20TC%2CNoto%20Sans%20TC%2Csans-serif%22%3E%E8%82%B2%3C/text%3E%3C/svg%3E">
   <link href="https://tauhu.tw/tauhu-oo.css" rel="stylesheet">
   <script src="https://oikasu1.github.io/snd/snd.js"></script>
   <script src="/_sdk/element_sdk.js"></script>
-  <style>
+  <style>/*md-dvh*/
         body {
             box-sizing: border-box;
             margin: 0;
@@ -57,7 +58,7 @@
             align-items: center;
             height: 100%;
             padding: 20px;
-            min-height: 100vh;
+            min-height: 100vh;min-height:100dvh;
             overflow-y: auto;
         }
 
@@ -229,7 +230,7 @@
         /* 遊戲頁面樣式 */
         .game-container {
             display: none;
-            height: 100vh;
+            height: 100vh;height:100dvh;
             padding: 15px;
             gap: 15px;
             overflow: hidden;
@@ -250,7 +251,7 @@
             gap: 12px;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
-            height: calc(100vh - 30px);
+            height: calc(100vh - 30px);height:calc(100dvh - 30px);
             overflow-y: auto;
             line-height: 1.2;
         }
@@ -265,7 +266,7 @@
             flex-direction: column;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
-            height: calc(100vh - 30px);
+            height: calc(100vh - 30px);height:calc(100dvh - 30px);
             overflow-y: auto;
         }
 
@@ -861,7 +862,7 @@
         @media (max-width: 480px) {
             .menu-container {
                 padding: 8px;
-                min-height: 100vh;
+                min-height: 100vh;min-height:100dvh;
             }
             
             .menu-card {
@@ -909,20 +910,20 @@
             .game-container {
                 padding: 6px;
                 gap: 8px;
-                height: 100vh;
+                height: 100vh;height:100dvh;
             }
             
             .left-panel {
                 padding: 12px;
                 border-radius: 18px;
                 gap: 8px;
-                height: calc(100vh - 12px);
+                height: calc(100vh - 12px);height:calc(100dvh - 12px);
             }
             
             .right-panel {
                 padding: 12px;
                 border-radius: 18px;
-                height: calc(100vh - 12px);
+                height: calc(100vh - 12px);height:calc(100dvh - 12px);
             }
             
             .game-header {
@@ -1057,6 +1058,118 @@
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+<style id="md-fit">/*md-dvh*/
+/* 響應式修正（各種螢幕不溢出可顯示範圍；矮螢幕時字級隨高度縮放）— © 2026 詹宗龍 */
+.navigation-buttons{display:flex;gap:6px;flex-wrap:nowrap}
+.navigation-buttons .nav-button{flex:1 1 0;min-width:0}
+/* 遊戲頁（v10）：一屏不捲動；橫放左欄按鈕放大填滿、題目置頂、選項填滿；直放按鈕收到下方 */
+html body .game-container{height:100vh;height:100dvh;height:100dvh;padding:1vmin 1vmin 20px;gap:1vmin;box-sizing:border-box;overflow:hidden}
+html body .left-panel,html body .right-panel{height:auto;min-height:0;overflow:hidden;box-sizing:border-box;border-radius:clamp(12px,2vmin,25px);margin:0}
+html body .left-panel>*{margin:0;min-width:0;box-sizing:border-box}
+html body .right-panel{display:flex;flex-direction:column}
+html body .game-header{flex:none;margin-bottom:0.6vmin}
+html body .question-area{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start}
+html body .question-text{flex:none;min-height:0;margin:0 0 1.6vmin;line-height:1.35}
+html body .options-grid{flex:1;min-height:0;width:100%;max-width:none;margin:0;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr}
+html body .option-button{min-height:0;height:100%;margin:0;justify-content:flex-start;box-sizing:border-box}
+html body .option-label{flex:none}
+html body .options-grid{grid-auto-rows:minmax(0,1fr);grid-template-columns:repeat(2,minmax(0,1fr))}
+html body .option-button{overflow:hidden}
+html body .option-text{display:block;flex:1 1 auto;min-width:0;text-align:left;line-height:1.15;overflow-wrap:normal}
+html body .back-button{width:100%;max-width:100%;box-sizing:border-box}
+@media (orientation: landscape){
+ html body .game-container{flex-direction:row}
+ html body .left-panel{order:0;width:24%;flex:none;flex-direction:column;flex-wrap:nowrap;justify-content:space-between;align-items:stretch;padding:2vh 1.2vw;padding:2dvh 1.2vw;gap:2vh;gap:2dvh}
+ html body .right-panel{order:0;width:auto;flex:1 1 0;padding:1.6vh 1.6vw;padding:1.6dvh 1.6vw}
+ html body .play-audio-section{flex:1.3 1 0;max-height:28vh;max-height:28dvh;min-height:0}
+ html body .play-audio-button{height:100%;padding:1vh 0.6vw;padding:1dvh 0.6vw;font-size:clamp(14px,min(4.8vh,2vw),44px);font-size:clamp(14px,min(4.8dvh,2vw),44px);border-radius:clamp(12px,2.2vh,24px);border-radius:clamp(12px,2.2dvh,24px)}
+ html body .progress-section{flex:none}
+ html body .progress-text{font-size:clamp(12px,min(4vh,1.8vw),36px);font-size:clamp(12px,min(4dvh,1.8vw),36px);margin-bottom:1vh;margin-bottom:1dvh}
+ html body .progress-bar{height:clamp(8px,1.5vh,18px);height:clamp(8px,1.5dvh,18px)}
+ html body .navigation-buttons{flex:1 1 0;max-height:24vh;max-height:24dvh;min-height:0;gap:0.8vw}
+ html body .nav-button{height:100%;padding:1vh 0.4vw;padding:1dvh 0.4vw;font-size:clamp(13px,min(4.4vh,1.9vw),40px);font-size:clamp(13px,min(4.4dvh,1.9vw),40px);border-radius:clamp(10px,2vh,20px);border-radius:clamp(10px,2dvh,20px)}
+ html body .back-button{flex:0.8 1 0;max-height:20vh;max-height:20dvh;min-height:0;padding:1vh 0.4vw;padding:1dvh 0.4vw;font-size:clamp(13px,min(4.4vh,1.9vw),40px);font-size:clamp(13px,min(4.4dvh,1.9vw),40px);border-radius:clamp(10px,2vh,20px);border-radius:clamp(10px,2dvh,20px)}
+ html body .question-info{flex:none;padding:1.2vh 0.8vw;padding:1.2dvh 0.8vw}
+ html body .info-title{font-size:clamp(13px,min(4.6vh,2vw),42px);font-size:clamp(13px,min(4.6dvh,2vw),42px);margin-bottom:0.6vh;margin-bottom:0.6dvh}
+ html body .info-item{margin-bottom:0.4vh;margin-bottom:0.4dvh}
+ html body .info-label,html body .info-value,html body .chinese-value{font-size:clamp(12px,min(3.8vh,1.7vw),34px);font-size:clamp(12px,min(3.8dvh,1.7vw),34px);min-width:0}
+ html body .chinese-item{min-height:0;padding:0.8vh 0.6vw;padding:0.8dvh 0.6vw;margin-top:0.6vh;margin-top:0.6dvh}
+ html body .chinese-item .info-label{margin-bottom:0.4vh;margin-bottom:0.4dvh}
+ html body .game-main-title{font-size:clamp(14px,min(4.4vh,2.4vw),48px);font-size:clamp(14px,min(4.4dvh,2.4vw),48px)}
+ html body .game-sub-title{font-size:clamp(11px,min(3vh,1.7vw),32px);font-size:clamp(11px,min(3dvh,1.7vw),32px)}
+ html body .question-text{font-size:clamp(18px,min(10vh,4.6vw),120px);font-size:clamp(18px,min(10dvh,4.6vw),120px)}
+ html body .options-grid{gap:2.4vh 1.4vw;gap:2.4dvh 1.4vw}
+ html body .option-button{padding:1.6vh 1.4vw;padding:1.6dvh 1.4vw;border-radius:clamp(12px,2.4vh,26px);border-radius:clamp(12px,2.4dvh,26px)}
+ html body .option-text{font-size:clamp(14px,min(9vh,3.6vw),100px);font-size:clamp(14px,min(9dvh,3.6vw),100px)}
+ html body .option-text.medium{font-size:clamp(13px,min(7.6vh,3.1vw),86px);font-size:clamp(13px,min(7.6dvh,3.1vw),86px)}
+ html body .option-text.small{font-size:clamp(12px,min(6.2vh,2.6vw),70px);font-size:clamp(12px,min(6.2dvh,2.6vw),70px)}
+ html body .option-label{width:clamp(22px,min(8vh,3.4vw),90px);width:clamp(22px,min(8dvh,3.4vw),90px);height:clamp(22px,min(8vh,3.4vw),90px);height:clamp(22px,min(8dvh,3.4vw),90px);font-size:clamp(12px,min(4.2vh,1.8vw),46px);font-size:clamp(12px,min(4.2dvh,1.8vw),46px);margin-right:1vw}
+}
+@media (orientation: portrait){
+ html body .game-container{flex-direction:column}
+ html body .right-panel{order:1;width:100%;flex:1 1 0;padding:1.4vh 3vw;padding:1.4dvh 3vw}
+ html body .left-panel{order:2;width:100%;flex:none;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"info info" "audio nav" "prog back";gap:1.2vh 2.4vw;gap:1.2dvh 2.4vw;padding:1.4vh 3vw;padding:1.4dvh 3vw;align-items:center}
+ html body .play-audio-section{grid-area:audio}
+ html body .question-info{grid-area:info;padding:0.8vh 2vw;padding:0.8dvh 2vw}
+ html body .progress-section{grid-area:prog}
+ html body .navigation-buttons{grid-area:nav;gap:2vw}
+ html body .back-button{grid-area:back}
+ html body .play-audio-button,html body .nav-button,html body .back-button{padding:1.6vh 1vw;padding:1.6dvh 1vw;font-size:clamp(13px,min(2.6vh,4.4vw),36px);font-size:clamp(13px,min(2.6dvh,4.4vw),36px);border-radius:clamp(10px,1.8vh,20px);border-radius:clamp(10px,1.8dvh,20px)}
+ html body .progress-text{font-size:clamp(12px,min(2.2vh,3.8vw),30px);font-size:clamp(12px,min(2.2dvh,3.8vw),30px);margin-bottom:0.6vh;margin-bottom:0.6dvh}
+ html body .progress-bar{height:clamp(8px,1vh,16px);height:clamp(8px,1dvh,16px)}
+ html body .info-title{display:none}
+ html body .question-info .info-item{display:inline-flex;margin:0 4vw 0 0}
+ html body .question-info .chinese-item{display:flex;flex-direction:row;align-items:baseline;width:100%;min-height:0;padding:0.6vh 2vw;padding:0.6dvh 2vw;margin:0.4vh 0 0;margin:0.4dvh 0 0;box-sizing:border-box}
+ html body .chinese-item .info-label{width:auto;margin:0 2vw 0 0;flex:none}
+ html body .chinese-value{text-align:left}
+ html body .info-label,html body .info-value,html body .chinese-value{font-size:clamp(12px,min(2.4vh,4vw),32px);font-size:clamp(12px,min(2.4dvh,4vw),32px);min-width:0}
+ html body .game-main-title{font-size:clamp(16px,min(3.2vh,6vw),48px);font-size:clamp(16px,min(3.2dvh,6vw),48px)}
+ html body .game-sub-title{font-size:clamp(12px,min(2.2vh,4.2vw),32px);font-size:clamp(12px,min(2.2dvh,4.2vw),32px)}
+ html body .question-text{font-size:clamp(20px,min(5.4vh,8vw),110px);font-size:clamp(20px,min(5.4dvh,8vw),110px)}
+ html body .options-grid{gap:1.4vh 2.4vw;gap:1.4dvh 2.4vw}
+ html body .option-button{padding:1vh 2.4vw;padding:1dvh 2.4vw;border-radius:clamp(12px,2vh,26px);border-radius:clamp(12px,2dvh,26px)}
+ html body .option-text{font-size:clamp(15px,min(4.4vh,6vw),76px);font-size:clamp(15px,min(4.4dvh,6vw),76px)}
+ html body .option-text.medium{font-size:clamp(14px,min(3.8vh,5.2vw),66px);font-size:clamp(14px,min(3.8dvh,5.2vw),66px)}
+ html body .option-text.small{font-size:clamp(13px,min(3.2vh,4.4vw),56px);font-size:clamp(13px,min(3.2dvh,4.4vw),56px)}
+ html body .option-label{width:clamp(24px,min(4.4vh,7vw),72px);width:clamp(24px,min(4.4dvh,7vw),72px);height:clamp(24px,min(4.4vh,7vw),72px);height:clamp(24px,min(4.4dvh,7vw),72px);font-size:clamp(12px,min(2.4vh,4vw),36px);font-size:clamp(12px,min(2.4dvh,4vw),36px);margin-right:2vw}
+}
+@media (orientation: portrait) and (max-width: 560px){
+ html body .options-grid{grid-template-columns:minmax(0,1fr)}
+ html body .option-text{font-size:clamp(16px,min(3.8vh,7.4vw),76px);font-size:clamp(16px,min(3.8dvh,7.4vw),76px)}
+ html body .option-text.medium{font-size:clamp(15px,min(3.4vh,6.6vw),66px);font-size:clamp(15px,min(3.4dvh,6.6vw),66px)}
+ html body .option-text.small{font-size:clamp(14px,min(3vh,5.8vw),56px);font-size:clamp(14px,min(3dvh,5.8vw),56px)}
+}
+/* 入口頁：一屏不捲動；直放時模式鈕兩欄、字級隨高度縮放 */
+html body .menu-container{box-sizing:border-box;min-height:0;height:100vh;height:100dvh;height:100dvh}
+@media (orientation: portrait){
+ html body .menu-container{padding:1.4vh 3vw 20px;padding:1.4dvh 3vw 20px}
+ html body .menu-card{padding:clamp(12px,2.4vh,30px) clamp(12px,4vw,30px);padding:clamp(12px,2.4dvh,30px) clamp(12px,4vw,30px);margin:auto;box-sizing:border-box}
+ html body .menu-header{margin-bottom:1.4vh;margin-bottom:1.4dvh}
+ html body .menu-main-title{font-size:clamp(20px,min(4.4vh,8vw),40px);font-size:clamp(20px,min(4.4dvh,8vw),40px)}
+ html body .menu-sub-title{font-size:clamp(13px,min(2.6vh,4.6vw),22px);font-size:clamp(13px,min(2.6dvh,4.6vw),22px)}
+ html body .menu-section{margin-bottom:1.4vh;margin-bottom:1.4dvh}
+ html body .menu-section-title{font-size:clamp(15px,min(3vh,5vw),24px);font-size:clamp(15px,min(3dvh,5vw),24px);margin-bottom:1vh;margin-bottom:1dvh}
+ html body .game-mode-grid{grid-template-columns:1fr 1fr;gap:1.2vh 2.4vw;gap:1.2dvh 2.4vw;margin-bottom:0}
+ html body .game-mode-button{padding:clamp(10px,2.4vh,22px) 1vw;padding:clamp(10px,2.4dvh,22px) 1vw;font-size:clamp(13px,min(2.4vh,4.2vw),19px);font-size:clamp(13px,min(2.4dvh,4.2vw),19px)}
+ html body .question-count-grid{grid-template-columns:repeat(4,1fr);gap:2vw;margin-bottom:0}
+ html body .question-count-button{padding:clamp(8px,1.8vh,16px) 1vw;padding:clamp(8px,1.8dvh,16px) 1vw;font-size:clamp(13px,min(2.4vh,4.2vw),19px);font-size:clamp(13px,min(2.4dvh,4.2vw),19px)}
+ html body .start-game-button{padding:clamp(10px,2vh,18px) 8vw;padding:clamp(10px,2dvh,18px) 8vw;font-size:clamp(15px,min(2.8vh,5vw),24px);font-size:clamp(15px,min(2.8dvh,5vw),24px);margin-top:1vh;margin-top:1dvh}
+}
+@media (orientation: landscape) and (max-height: 640px){
+ html body .menu-container{padding:1vh 2vw;padding:1dvh 2vw;min-height:0;height:100vh;height:100dvh;height:100dvh;box-sizing:border-box;justify-content:center}
+ html body .menu-card{max-width:96vw;width:96vw;padding:1.6vh 2vw;padding:1.6dvh 2vw;margin:0;border-radius:18px;box-sizing:border-box}
+ html body .menu-header{margin-bottom:1vh;margin-bottom:1dvh}
+ html body .menu-main-title{font-size:clamp(18px,7vh,36px);font-size:clamp(18px,7dvh,36px)}
+ html body .menu-sub-title{font-size:clamp(12px,4vh,20px);font-size:clamp(12px,4dvh,20px)}
+ html body .menu-section{margin-bottom:1vh;margin-bottom:1dvh}
+ html body .menu-section-title{font-size:clamp(13px,4.4vh,22px);font-size:clamp(13px,4.4dvh,22px);margin-bottom:0.8vh;margin-bottom:0.8dvh}
+ html body .game-mode-grid{grid-template-columns:repeat(4,1fr);gap:1vw;margin-bottom:0}
+ html body .game-mode-button{padding:1.8vh 0.6vw;padding:1.8dvh 0.6vw;font-size:clamp(11px,3.8vh,17px);font-size:clamp(11px,3.8dvh,17px);border-radius:14px}
+ html body .question-count-grid{grid-template-columns:repeat(4,1fr);gap:1vw}
+ html body .question-count-button{padding:1.4vh 0.6vw;padding:1.4dvh 0.6vw;font-size:clamp(12px,4vh,18px);font-size:clamp(12px,4dvh,18px)}
+ html body .start-game-button{padding:1.6vh 3vw;padding:1.6dvh 3vw;font-size:clamp(13px,4.6vh,20px);font-size:clamp(13px,4.6dvh,20px);margin-top:0.6vh;margin-top:0.6dvh}
+}
+</style>
 </head>
  <body oncontextmenu="return false;"><!-- 入口選單頁面 -->
   <div class="menu-container" id="menuContainer">
@@ -1080,7 +1193,7 @@
      <div class="menu-section-title">
       選擇測驗數量
      </div>
-     <div class="question-count-grid"><button class="question-count-button" data-count="5">5題</button> <button class="question-count-button" data-count="7">7題</button> <button class="question-count-button" data-count="9">9題</button> <button class="question-count-button" data-count="11">11題</button>
+     <div class="question-count-grid"><button class="question-count-button" data-count="5">5題</button> <button class="question-count-button" data-count="7">7題</button> <button class="question-count-button" data-count="9">9題</button> <button class="question-count-button" data-count="11">11題</button> <button class="question-count-button" id="md-all-btn" data-count="0" title="題庫全部題目，亂數出題">全部</button>
      </div>
     </div><button class="start-game-button" id="startGameButton" disabled>開始遊戲</button>
    </div>
@@ -1278,8 +1391,22 @@
         }
 
         // 獲取音檔 URL
-        function getAudioUrl(romanization) {
-            const audioRoman = romanization.split('/')[0].trim();
+                /* 發音取第一種完整讀音（2026-11-15 修正：多音寫法不再只唸第一個音節）— © 2026 詹宗龍 */
+        function mdTl(raw, han) {
+            let s = String(raw || '').trim();
+            if (!s || /^https?:\/\//.test(s)) return s;
+            s = s.split(/\s+\/\s+/)[0].replace(/\/\s+/g, '/');
+            const n = (String(han || '').match(/[㐀-鿿豈-﫿]|[\ud840-\ud8bf][\udc00-\udfff]/g) || []).length;
+            const cnt = t => t.split(/[\s\-]+/).filter(Boolean).length;
+            const tok = s.replace(/[^\s\-]+/g, w => w.split('/')[0]);
+            const first = s.split('/')[0].trim();
+            if (!n || cnt(tok) === n) return tok;
+            if (cnt(first) === n) return first;
+            return tok;
+        }
+
+        function getAudioUrl(romanization, han) {
+            const audioRoman = mdTl(romanization, han);
             return audioRoman;
         }
 
@@ -1288,7 +1415,7 @@
             if (currentQuestionIndex >= currentQuestions.length) return;
             
             const currentQuestion = currentQuestions[currentQuestionIndex];
-            const audioUrl = getAudioUrl(currentQuestion.romanization);
+            const audioUrl = getAudioUrl(currentQuestion.romanization, currentQuestion.taiwanese);
             
             const button = document.getElementById('playAudioButton');
             if (typeof holo === 'function') {
@@ -1630,6 +1757,106 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99eb26eb46324a87',t:'MTc2MzE3MTk5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><div class="credit-src" style="position:fixed;right:4px;bottom:2px;z-index:2147483647;max-width:calc(100% - 8px);pointer-events:none;font:11px/1.4 sans-serif;color:#333;background:rgba(255,255,255,.72);padding:1px 6px;border-radius:4px;text-align:right;">育達文化事業股份有限公司授權使用｜© 2026 詹宗龍</div>
+ <div class="credit-src" style="position:fixed;right:4px;bottom:2px;z-index:2147483647;max-width:calc(100% - 8px);pointer-events:none;font:11px/1.4 sans-serif;color:#333;background:rgba(255,255,255,.72);padding:1px 6px;border-radius:4px;text-align:right;">育達文化事業股份有限公司授權使用｜© 2026 詹宗龍</div>
+<script id="md-fit-js">
+/* 選項文字配合外框自動放大縮小（儘可能最大化）— © 2026 詹宗龍 */
+(function(){
+function fitOne(b){var t=b.querySelector('.option-text');if(!t||!b.offsetWidth)return;t.style.fontSize='10px';
+var cs=getComputedStyle(b),l=b.querySelector('.option-label');
+var lw=l?l.offsetWidth+parseFloat(getComputedStyle(l).marginRight||0):0;
+var w=b.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-lw-2,h=b.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-2;
+if(w<20||h<10)return;w=Math.floor(w);h=Math.floor(h);t.style.maxWidth=w+'px';
+var lo=10,hi=Math.max(12,Math.min(h*0.72,240)),best=lo;
+for(var i=0;i<14;i++){var m=(lo+hi)/2;t.style.fontSize=m+'px';if(t.scrollWidth<=t.clientWidth+1&&t.offsetHeight<=h*0.92){best=m;lo=m;}else hi=m;}
+t.style.fontSize=Math.floor(best)+'px';}
+function fitAll(){document.querySelectorAll('.option-button').forEach(fitOne);}
+var raf=0;function later(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){raf=requestAnimationFrame(fitAll);});}
+window.mdFitOptions=later;
+if(typeof window.adjustFontSize==='function'){var o=window.adjustFontSize;window.adjustFontSize=function(e,s){o(e,s);later();};}
+window.addEventListener('resize',later);window.addEventListener('orientationchange',later);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(later);
+})();
+</script>
+<!-- md-fs：浮動全螢幕切換鈕 © 2026 詹宗龍（臺中市明道中學） -->
+<style id="md-fs-css">
+#md-fs-btn{position:fixed;right:4px;top:4px;left:auto;bottom:auto;z-index:2147483646;width:40px;height:40px;padding:0;margin:0;border:2px solid #FFD400;border-radius:50%;background:rgba(17,17,17,.8);color:#FFD400;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.55;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:opacity .15s;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+#md-fs-btn[hidden]{display:none}
+#md-fs-btn:hover,#md-fs-btn:focus-visible,#md-fs-btn.drag{opacity:1;outline:none}
+#md-fs-btn.drag{cursor:grabbing}
+#md-fs-btn svg{width:22px;height:22px;display:block;pointer-events:none}
+#md-fs-btn .md-fs-exit{display:none}
+#md-fs-btn.on .md-fs-enter{display:none}
+#md-fs-btn.on .md-fs-exit{display:block}
+@media print{#md-fs-btn{display:none}}
+</style>
+<button type="button" id="md-fs-btn" title="全螢幕（可拖曳移位）" aria-label="全螢幕" hidden>
+<svg class="md-fs-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+<svg class="md-fs-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+</button>
+<script id="md-fs-js">
+(function(){
+ var b=document.getElementById('md-fs-btn'),d=document,e=d.documentElement,K='md-fs-pos';
+ var req=e.requestFullscreen||e.webkitRequestFullscreen||e.msRequestFullscreen;
+ var ok=d.fullscreenEnabled||d.webkitFullscreenEnabled||d.msFullscreenEnabled;
+ if(!b||!req||ok===false){return;}
+ b.hidden=false;
+ function cur(){return d.fullscreenElement||d.webkitFullscreenElement||d.msFullscreenElement;}
+ function sync(){var on=!!cur();b.classList.toggle('on',on);var t=on?'取消全螢幕':'全螢幕';b.title=t+'（可拖曳移位）';b.setAttribute('aria-label',t);}
+ function toggle(){
+  if(cur()){(d.exitFullscreen||d.webkitExitFullscreen||d.msExitFullscreen).call(d);}
+  else{var p=req.call(e);if(p&&p.catch){p.catch(function(){});}}
+ }
+ var pos=null;
+ function place(){
+  if(!pos)return;
+  var w=b.offsetWidth||40,h=b.offsetHeight||40;
+  var x=Math.max(0,Math.min(innerWidth-w,pos.x*innerWidth)),y=Math.max(0,Math.min(innerHeight-h,pos.y*innerHeight));
+  b.style.left=x+'px';b.style.top=y+'px';b.style.right='auto';b.style.bottom='auto';
+ }
+ try{var s=JSON.parse(localStorage.getItem(K)||'null');if(s&&isFinite(s.x)&&isFinite(s.y))pos=s;}catch(_){}
+ place();addEventListener('resize',place);
+ var st=null,moved=false;
+ b.addEventListener('pointerdown',function(ev){if(ev.button>0)return;var r=b.getBoundingClientRect();st={x:ev.clientX,y:ev.clientY,ox:ev.clientX-r.left,oy:ev.clientY-r.top};moved=false;try{b.setPointerCapture(ev.pointerId);}catch(_){}});
+ b.addEventListener('pointermove',function(ev){
+  if(!st)return;
+  if(!moved&&Math.abs(ev.clientX-st.x)+Math.abs(ev.clientY-st.y)<8)return;
+  moved=true;b.classList.add('drag');
+  pos={x:(ev.clientX-st.ox)/innerWidth,y:(ev.clientY-st.oy)/innerHeight};place();
+ });
+ function end(){if(!st)return;st=null;b.classList.remove('drag');if(moved){try{localStorage.setItem(K,JSON.stringify(pos));}catch(_){}}}
+ b.addEventListener('pointerup',end);b.addEventListener('pointercancel',end);
+ b.addEventListener('click',function(ev){
+  ev.preventDefault();ev.stopPropagation();
+  if(moved){moved=false;return;}
+  toggle();b.blur();
+ });
+ d.addEventListener('fullscreenchange',sync);d.addEventListener('webkitfullscreenchange',sync);
+ sync();
+})();
+</script>
+<!-- /md-fs -->
+<!-- md-all：入口頁「全部」題數鈕，題庫全部亂數出題（© 2026 詹宗龍） -->
+<style id="md-all-css">
+html body .question-count-grid{grid-template-columns:repeat(5,1fr)}
+</style>
+<script id="md-all-js">(function(){var b=document.getElementById('md-all-btn');try{b.dataset.count=String(gameData.length);}catch(_){b.hidden=true;}})();</script>
+<!-- /md-all -->
+<!-- md-menufull：入口頁橫放滿版、物件隨螢幕放大（© 2026 詹宗龍） -->
+<style id="md-menufull">/*md-dvh*/
+@media (orientation: landscape){
+ html body .menu-container{height:calc(100vh - 22px);min-height:0;padding:1.6vh 2vw 0;box-sizing:border-box;justify-content:stretch;align-items:stretch;overflow:hidden}
+ html body .menu-card{flex:1 1 auto;min-height:0;width:100%;max-width:none;margin:0 0 1vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-evenly;padding:2vh 3vw;border-radius:clamp(16px,2.4vh,30px)}
+ html body .menu-header,html body .menu-section{margin:0}
+ html body .menu-main-title{font-size:clamp(20px,min(4.6vw,9vh),88px);line-height:1.15}
+ html body .menu-sub-title{font-size:clamp(12px,min(2.4vw,4.4vh),40px)}
+ html body .menu-section-title{font-size:clamp(13px,min(2.4vw,4.6vh),44px);margin-bottom:1.4vh}
+ html body .game-mode-grid{grid-template-columns:repeat(4,1fr);gap:1.4vw;margin:0}
+ html body .game-mode-button{padding:2.8vh 0.6vw;font-size:clamp(12px,min(2.1vw,4.8vh),44px);border-radius:clamp(12px,2vh,24px)}
+ html body .question-count-grid{grid-template-columns:repeat(5,1fr);gap:1.4vw;margin:0}
+ html body .question-count-button{padding:2.4vh 0.6vw;font-size:clamp(12px,min(2.6vw,5.4vh),52px);border-radius:clamp(12px,2vh,24px)}
+ html body .start-game-button{align-self:center;margin:0;padding:2vh 8vw;font-size:clamp(13px,min(2.8vw,5.8vh),56px)}
+}
+</style>
+<!-- /md-menufull -->
 </body>
 </html>
