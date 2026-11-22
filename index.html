@@ -13,36 +13,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="詹宗龍（臺中明道中學）">
-<meta name="copyright" content="© 2026 詹宗龍（臺中明道中學）。保留一切權利。">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="copyright" content="© 2026 詹宗龍（臺中明道中學）。保留一切權利。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>臺灣台語 育達版高中全1冊教案</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23FFD400%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2250%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23111111%22%20font-family%3D%22Microsoft%20JhengHei%2CPingFang%20TC%2CNoto%20Sans%20TC%2Csans-serif%22%3E%E8%82%B2%3C/text%3E%3C/svg%3E">
     <style>
+        /* 主視覺：黑 #111111／黃 #FFD400／白 #FFFFFF（2026-10-01 專案規範） */
         :root {
-            --primary-color: #FFD400; /* 主色：黃色 */
-            --secondary-color: #111111; /* 輔色：黑色 */
-            --background-color: #FFFFFF; /* 背景：白色 */
-            --card-bg: #FFFFFF;
-            --text-color: #111111;
-            --link-bg: #F5F5F5;
-            --link-hover: #FFD400;
+            --yellow: #FFD400;
+            --black: #111111;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --line: #E0E0E0;
+            --gap: clamp(14px, 1.25vw, 30px);
+            --cols: 2;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Microsoft JhengHei', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background-color: var(--white);
+            color: var(--black);
             margin: 0;
             padding: 0;
-            line-height: 1;
+            line-height: 1.25;
         }
 
         .header {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            text-align: center;
-            padding: 13px 20px;
+            background-color: var(--black);
+            color: var(--yellow);
+            padding: clamp(10px, 0.9vw, 20px) clamp(12px, 1.4vw, 28px);
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            line-height: 1;
         }
 
         .header .title-row {
@@ -50,56 +52,60 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px 18px;
-            margin: 0;
+            gap: 10px clamp(14px, 1.2vw, 28px);
         }
 
         .header .logo {
-            display: inline-block;
-            background: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            background: var(--white);
             border-radius: 8px;
-            padding: 4px 12px;
+            padding: clamp(4px, 0.35vw, 8px) clamp(10px, 0.8vw, 18px);
         }
 
-        .header .logo img {
+        .header .logo .logo-svg {
             display: block;
-            height: 48px;
+            height: clamp(40px, 3.4vw, 72px);
             width: auto;
             max-width: 100%;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: clamp(26px, 2.4vw, 54px);
             font-weight: 800;
             line-height: 1.2;
             text-align: center;
+            text-wrap: balance;
         }
 
+        /* 標題依語意斷行：空白分隔的片語各自不拆（窄螢幕只在片語之間換行） */
+        .header h1 .ph { display: inline-block; }
+
+        /* 左右滿版：不設 max-width、不置中窄版（入口頁版面規範 2026-11-21） */
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: none;
+            margin: clamp(16px, 1.6vw, 40px) 0;
+            padding: 0 clamp(10px, 1.4vw, 28px);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-            line-height: 1;
+            gap: var(--gap);
         }
 
         .card {
-            flex: 0 1 340px;
-            box-sizing: border-box;
-            background-color: var(--card-bg);
+            flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+            min-width: 0;
+            background-color: var(--white);
             border-radius: 8px;
-            padding: 25px;
+            padding: clamp(14px, 1.1vw, 28px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 6px solid var(--primary-color);
-            border-left: 1px solid #E0E0E0;
-            border-right: 1px solid #E0E0E0;
-            border-bottom: 1px solid #E0E0E0;
-            line-height: 1;
+            border-top: 6px solid var(--yellow);
+            border-left: 1px solid var(--line);
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
 
         .card:hover {
@@ -108,90 +114,85 @@
         }
 
         .card h2 {
-            color: var(--secondary-color);
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.5em;
-            border-bottom: 2px solid var(--secondary-color);
+            color: var(--black);
+            margin: 0 0 8px;
+            font-size: clamp(20px, 1.45vw, 34px);
+            border-bottom: 2px solid var(--black);
             padding-bottom: 10px;
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .pinyin {
             color: #666666;
             font-style: italic;
-            font-size: 0.95em;
-            margin-bottom: 20px;
+            font-size: clamp(13px, 0.85vw, 20px);
+            margin-bottom: clamp(12px, 1vw, 22px);
             display: block;
-            line-height: 1;
         }
 
         .links-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            line-height: 1;
         }
 
         .links-list li {
-            margin-bottom: 10px;
-            line-height: 1;
+            margin-bottom: clamp(6px, 0.5vw, 12px);
         }
 
         .links-list a {
             display: block;
             text-decoration: none;
-            color: var(--text-color);
-            background-color: var(--link-bg);
-            padding: 12px 15px;
+            color: var(--black);
+            background-color: var(--gray);
+            padding: clamp(9px, 0.6vw, 14px) clamp(10px, 0.7vw, 16px) clamp(9px, 0.6vw, 14px) clamp(28px, 1.8vw, 40px);
             border-radius: 6px;
             font-weight: bold;
+            font-size: clamp(15px, 0.95vw, 22px);
             transition: all 0.2s ease;
             position: relative;
-            padding-left: 35px;
             border: 1px solid #EEEEEE;
             cursor: pointer;
-            line-height: 1;
         }
 
         .links-list a::before {
             content: "►";
             position: absolute;
-            left: 12px;
-            font-size: 0.9em;
-            color: var(--secondary-color);
+            left: clamp(9px, 0.6vw, 14px);
+            font-size: 0.85em;
+            color: var(--black);
             top: 50%;
             transform: translateY(-50%);
         }
 
-        .links-list a:hover {
-            background-color: var(--link-hover);
-            color: var(--secondary-color);
-            padding-left: 40px;
-            border-color: var(--primary-color);
+        .links-list a:hover,
+        .links-list a:focus-visible {
+            background-color: var(--yellow);
+            color: var(--black);
+            border-color: var(--yellow);
+            outline: none;
         }
 
         .footer {
             text-align: center;
-            font-size: 12px;
+            font-size: clamp(12px, 0.75vw, 16px);
             color: #555555;
             padding: 0 16px 28px;
             line-height: 1.5;
         }
 
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            .header .logo img {
-                height: 36px;
-            }
-            .container {
-                padding: 0 16px;
-            }
-            .card {
-                flex-basis: 100%;
-            }
+        /* 橫式畫面：欄數隨寬度增加，字級已用 clamp 隨寬度放大 */
+        @media (orientation: landscape) and (min-width: 900px) {
+            :root { --cols: 4; }
+        }
+        @media (orientation: landscape) and (min-width: 1500px) {
+            :root { --cols: 7; }
+        }
+
+        /* 手機：單欄直列，不可橫向捲動 */
+        @media (max-width: 520px) {
+            :root { --cols: 1; }
+            .header h1 { font-size: 1.6em; }
         }
     </style>
 </head>
@@ -199,14 +200,14 @@
 
     <header class="header">
         <div class="title-row">
-            <div class="logo"><img src="img/yuda-logo.png" alt="育達文化"></div>
-            <h1>臺灣台語 育達版高中全1冊教案</h1>
+            <div class="logo"><img class="logo-svg" src="img/yuda-logo.png" alt="育達文化"></div>
+            <h1><span class="ph">臺灣台語</span> <span class="ph">育達版高中全1冊教案</span></h1>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <div class="card">
+        <section class="card">
             <h2>自學點讀筆</h2>
             <span class="pinyin">tsū-ha̍k tiám-tho̍k-pit</span>
             <ul class="links-list">
@@ -220,9 +221,9 @@
                 <li><a href="pen/YUDA-B1L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="pen/YUDA-B1L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>形音義</h2>
             <span class="pinyin">hîng-im-gī</span>
             <ul class="links-list">
@@ -235,9 +236,9 @@
                 <li><a href="hingim/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="hingim/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>咱來餾生份字</h2>
             <span class="pinyin">lán lâi liū tshenn-hūn-jī</span>
             <ul class="links-list">
@@ -251,9 +252,9 @@
                 <li><a href="siann/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="siann/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>選詞塌空</h2>
             <span class="pinyin">suán-sû thap-khang</span>
             <ul class="links-list">
@@ -267,9 +268,9 @@
                 <li><a href="suansu/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="suansu/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>咱來鬥句</h2>
             <span class="pinyin">lán lâi tàu-kù</span>
             <ul class="links-list">
@@ -283,9 +284,9 @@
                 <li><a href="tauku/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="tauku/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>心智圖配對</h2>
             <span class="pinyin">sim-tì-tôo phuè-tuì</span>
             <ul class="links-list">
@@ -299,9 +300,9 @@
                 <li><a href="mindmap/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="mindmap/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <h2>延伸討論</h2>
             <span class="pinyin">iân-sin thó-lūn</span>
             <ul class="links-list">
@@ -314,9 +315,9 @@
                 <li><a href="iansin/L7.html" target="_blank">第7課 我的人生，我創造</a></li>
                 <li><a href="iansin/L8.html" target="_blank">第8課 翕相師傅</a></li>
             </ul>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
     <div class="footer">育達文化事業股份有限公司授權使用｜© 2026 詹宗龍（臺中明道中學）</div>
 </body>
